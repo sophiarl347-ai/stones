@@ -25,19 +25,30 @@ export const cards = sqliteTable("cards", {
   title: text("title").notNull(),
   detail: text("detail").notNull().default(""),
   meta: text("meta").notNull().default(""),
+  // show the item, not a summary of it
+  fromName: text("from_name").notNull().default(""),
+  fromEmail: text("from_email").notNull().default(""),
+  snippet: text("snippet").notNull().default(""),
+  receivedAt: text("received_at").notNull().default(""),
+  unread: integer("unread").notNull().default(0),
+  whenLabel: text("when_label").notNull().default(""),
+  location: text("location").notNull().default(""),
+  recurrence: text("recurrence").notNull().default(""),
   question: text("question").notNull(),
-  choiceA: text("choice_a").notNull(),
-  choiceB: text("choice_b").notNull(),
-  lineA: text("line_a").notNull(),           // the line written if A
-  lineB: text("line_b").notNull(),
-  stoneFile: text("stone_file").notNull(),   // which stone this writes to
+  // JSON array: [{ label, line, stone }] — real moves, not a binary.
+  options: text("options").notNull().default("[]"),
+  choiceA: text("choice_a").notNull().default(""),
+  choiceB: text("choice_b").notNull().default(""),
+  lineA: text("line_a").notNull().default(""),
+  lineB: text("line_b").notNull().default(""),
+  stoneFile: text("stone_file").notNull(),   // default stone if an option omits one
   ord: integer("ord").notNull().default(0),
 });
 
 export const answers = sqliteTable("answers", {
   id: integer("id").primaryKey({ autoIncrement: true }),
   cardId: integer("card_id").notNull(),
-  choice: text("choice").notNull(),          // "a" | "b"
+  choice: text("choice").notNull(),          // the option label
   line: text("line").notNull(),
   stoneFile: text("stone_file").notNull(),
   createdAt: text("created_at").notNull(),
