@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="512" height="512">
+  <title>Stones</title>
+  <desc>Placeholder mark. Three stones, one warm. Replace with Sophia's designed icon.</desc>
+  <defs>
+    <radialGradient id="heat" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#FE6427" stop-opacity=".62"/>
+      <stop offset="100%" stop-color="#FE6427" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+
+  <rect width="512" height="512" rx="114" fill="#26282A"/>
+
+  <circle cx="256" cy="300" r="150" fill="url(#heat)"/>
+
+  <polygon points="150,330 122,286 146,238 200,228 232,268 216,320" fill="#EFEAE3"/>
+  <polygon points="366,332 338,292 358,244 410,236 438,278 420,326" fill="#EFEAE3"/>
+  <polygon points="258,286 222,232 250,170 318,160 356,208 336,272" fill="#FE6427"/>
+</svg>
